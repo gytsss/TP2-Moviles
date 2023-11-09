@@ -13,11 +13,11 @@ public class BallSpawner : MonoBehaviour
         {
             Vector3 touchedPos =
                 Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y,
-                    10));
+                    5));
 
             GameObject ball = Instantiate(ballPrefab, touchedPos, Quaternion.identity) as GameObject;
 
-            Destroy(ball, 2f);
+            Destroy(ball, 3f);
         }
     }
 }

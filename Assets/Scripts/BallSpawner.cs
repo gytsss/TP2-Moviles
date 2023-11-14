@@ -7,7 +7,7 @@ public class BallSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject ballPrefab;
 
-    void Update()
+    private void Update()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -15,9 +15,14 @@ public class BallSpawner : MonoBehaviour
                 Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y,
                     5));
 
-            GameObject ball = Instantiate(ballPrefab, touchedPos, Quaternion.identity) as GameObject;
+            float boundary = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height * 0.75f, 0)).y;
+            
+            if (touchedPos.y > boundary)
+            {
+                GameObject ball = Instantiate(ballPrefab, touchedPos, Quaternion.identity) as GameObject;
 
-            Destroy(ball, 3f);
+                Destroy(ball, 3f);
+            }
         }
     }
 }

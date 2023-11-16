@@ -21,14 +21,6 @@ public class Counter : MonoBehaviour
 
     private void Update()
     {
-        // switch (points)
-        // {
-        //     case 3:
-        //         OnNextLevel?.Invoke();
-        //         break;
-        //     
-        // }
-        
         Vector3 position = pointsText.transform.position;
         
         _positionY = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height * 0.64f, 0)).y;

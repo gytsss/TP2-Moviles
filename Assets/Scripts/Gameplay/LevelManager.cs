@@ -8,8 +8,11 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance { get; private set; }
 
     private List<Level> _levels;
-    
     public Level CurrentLevel { get; private set;}
+    
+    [SerializeField] float _level1Speed = 1f;
+    [SerializeField] float _level2Speed = 1.5f;
+    [SerializeField] float _level3Speed = 2.5f;
 
     private void Awake()
     {
@@ -25,9 +28,9 @@ public class LevelManager : MonoBehaviour
 
         _levels = new List<Level>
         {
-            new Level { LevelNumber = 1, RimSpeed = 1f, RimMovement = "Static" },
-            new Level { LevelNumber = 2, RimSpeed = 1.5f, RimMovement = "Horizontal" },
-            new Level { LevelNumber = 3, RimSpeed = 2.5f, RimMovement = "Diagonal" },
+            new Level { LevelNumber = 1, RimSpeed = _level1Speed, RimMovement = "Static" },
+            new Level { LevelNumber = 2, RimSpeed = _level2Speed, RimMovement = "Horizontal" },
+            new Level { LevelNumber = 3, RimSpeed = _level3Speed, RimMovement = "Diagonal" },
         };
 
         SetCurrentLevel(1);
@@ -51,6 +54,7 @@ public class LevelManager : MonoBehaviour
         CurrentLevel = _levels[levelNumber - 1];
         Debug.Log("(set current level)Current Level: " + CurrentLevel.LevelNumber);
     }
+    
     
     private void OnDestroy()
     {

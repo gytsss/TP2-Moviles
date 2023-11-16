@@ -344,7 +344,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9213264806497574352}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: PlayLevel1
+        m_MethodName: PlayLevelSelector
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -922,6 +922,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2758163156348025455, guid: 10499be2e1e8496449cf61e41581be27, type: 3}
+      propertyPath: _gameSceneName
+      value: Levels
+      objectReference: {fileID: 0}
     - target: {fileID: 9213264807962888537, guid: 10499be2e1e8496449cf61e41581be27, type: 3}
       propertyPath: m_RootOrder
       value: 3

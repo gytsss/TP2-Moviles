@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213264807962888537}
   - component: {fileID: 2758163156348025455}
+  - component: {fileID: 4447552070604625033}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -44,7 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a441cff559dab954d8e0a6ae22ea1065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameSceneName: Game
+  _level1SceneName: Level1
+  _level2SceneName: Level2
+  _level3SceneName: Level3
+  _levelSelectorSceneName: LevelSelector
   _creditsSceneName: Credits
   _mainMenuSceneName: Menu
   _optionsSceneName: Options
+--- !u!114 &4447552070604625033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213264807962888538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46090961114e1d34c86664eb00cd3ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0

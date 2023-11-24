@@ -84,18 +84,21 @@ public class PlayGamesAchievements : MonoBehaviour
     public void ShowLeaderboard()
     {
         if (Social.localUser.authenticated)
-        {
             PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_leaderboard);
-        }
     }
 
     public void ShowAchievements()
     {
-        Social.ShowAchievementsUI();
+        if (Social.localUser.authenticated)
+            Social.ShowAchievementsUI();
     }
 
     public void EnterLevel1()
     {
-        Social.ReportProgress(GPGSIds.achievement_enter_level_1, 100f, success => { });
+        if (Social.localUser.authenticated)
+        {
+            PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
+            Social.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
+        }
     }
 }

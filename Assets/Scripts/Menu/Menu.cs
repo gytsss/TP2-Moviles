@@ -38,6 +38,26 @@ public class Menu : MonoBehaviour
     {
         LoadScene(_level2SceneName);
     }
+    public void PlayLevel(int level)
+    {
+        switch (level)
+        {
+            case 1:
+                LoadScene(_level1SceneName);
+                break;
+            case 2:
+                LoadScene(_level2SceneName);
+                break;
+            case 3:
+                LoadScene(_level3SceneName);
+                break;
+            case 4:
+                Debug.Log("No hay mas niveles, volviendo al menu!");
+                GoMainMenu();
+                break;
+                
+        }
+    }
     public void PlayLevel3()
     {
         LoadScene(_level3SceneName);

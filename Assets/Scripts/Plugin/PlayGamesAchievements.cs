@@ -75,30 +75,42 @@ public class PlayGamesAchievements : MonoBehaviour
 
     public void SendScore()
     {
-        if (Social.localUser.authenticated)
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
         {
-            Social.ReportScore(score, GPGSIds.leaderboard_leaderboard, success => { });
+            PlayGamesPlatform.Instance.ReportScore(score, GPGSIds.leaderboard_leaderboard, success => { });
         }
     }
 
     public void ShowLeaderboard()
     {
-        if (Social.localUser.authenticated)
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
             PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_leaderboard);
     }
 
     public void ShowAchievements()
     {
-        if (Social.localUser.authenticated)
-            Social.ShowAchievementsUI();
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
+        {
+            PlayGamesPlatform.Instance.ShowAchievementsUI();
+            //Social.ShowAchievementsUI();
+        }
     }
 
     public void EnterLevel1()
     {
-        if (Social.localUser.authenticated)
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
         {
             PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
-            Social.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
+            //Social.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
+            PlayGamesPlatform.Instance.UnlockAchievement(GPGSIds.achievement_enter_level_2, success => { });
+        }
+    }
+    public void EnterLevel2()
+    {
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
+        {
+            PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_enter_level_2, 100f, success => { });
+            //Social.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
         }
     }
 }

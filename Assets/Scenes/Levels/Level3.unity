@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0/0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5d532f0c26862c42a7f5c824964c783, type: 2}
   m_sharedMaterial: {fileID: 248404077805400804, guid: a5d532f0c26862c42a7f5c824964c783, type: 2}
@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2632090925664056465, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -144.00002
+      value: -144
       objectReference: {fileID: 0}
     - target: {fileID: 2632090925664056465, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -675,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 2632090925664056465, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732804090718340398, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5176471
       objectReference: {fileID: 0}
     - target: {fileID: 8783103981508675006, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_Name
@@ -861,7 +865,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

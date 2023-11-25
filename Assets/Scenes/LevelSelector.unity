@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.47058824, g: 0.8509804, b: 0.43137255, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.6862745}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.47058824, g: 0.8509804, b: 0.43137255, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.6862745}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.47058824, g: 0.8509804, b: 0.43137255, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.6862745}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1523,6 +1523,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1898406443}
     m_Modifications:
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Colors.m_PressedColor.a
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

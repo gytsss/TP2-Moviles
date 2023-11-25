@@ -577,6 +577,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 1825588321}
     m_Modifications:
     - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Colors.m_PressedColor.a
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 938843657}
@@ -721,15 +737,15 @@ RectTransform:
   m_GameObject: {fileID: 1044904929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00032, y: 1.00032, z: 1.00032}
+  m_LocalScale: {x: 1.8950226, y: 1.0788496, z: 0.93813}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1825588321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 107, y: 0}
+  m_SizeDelta: {x: 888, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1044904931
 MonoBehaviour:

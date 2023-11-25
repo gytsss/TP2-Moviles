@@ -20,7 +20,8 @@ public class BallSpawner : MonoBehaviour
             if (touchedPos.y > boundary)
             {
                 GameObject ball = Instantiate(ballPrefab, touchedPos, Quaternion.identity) as GameObject;
-
+                ball.GetComponent<SpriteRenderer>().sprite = ShopManager.Instance.GetActiveBallSprite();
+                
                 Destroy(ball, 3f);
             }
         }

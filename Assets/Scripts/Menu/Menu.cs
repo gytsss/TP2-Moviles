@@ -8,13 +8,14 @@ public class Menu : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private string _level1SceneName = "Level1";
-    [SerializeField] private string _level2SceneName = "Level2";
-    [SerializeField] private string _level3SceneName = "Level3";
-    [SerializeField] private string _levelSelectorSceneName = "LevelSelector";
-    [SerializeField] private string _creditsSceneName = "Credits";
-    [SerializeField] private string _mainMenuSceneName = "Menu";
-    [SerializeField] private string _optionsSceneName = "Options";
+    [SerializeField] private string level1SceneName = "Level1";
+    [SerializeField] private string level2SceneName = "Level2";
+    [SerializeField] private string level3SceneName = "Level3";
+    [SerializeField] private string levelSelectorSceneName = "LevelSelector";
+    [SerializeField] private string creditsSceneName = "Credits";
+    [SerializeField] private string mainMenuSceneName = "Menu";
+    [SerializeField] private string optionsSceneName = "Options";
+    [SerializeField] private string shopSceneName = "Shop";
 
     #endregion
 
@@ -32,24 +33,24 @@ public class Menu : MonoBehaviour
 
     public void PlayLevel1()
     {
-        LoadScene(_level1SceneName);
+        LoadScene(level1SceneName);
     }
     public void PlayLevel2()
     {
-        LoadScene(_level2SceneName);
+        LoadScene(level2SceneName);
     }
     public void PlayLevel(int level)
     {
         switch (level)
         {
             case 1:
-                LoadScene(_level1SceneName);
+                LoadScene(level1SceneName);
                 break;
             case 2:
-                LoadScene(_level2SceneName);
+                LoadScene(level2SceneName);
                 break;
             case 3:
-                LoadScene(_level3SceneName);
+                LoadScene(level3SceneName);
                 break;
             case 4:
                 Debug.Log("No hay mas niveles, volviendo al menu!");
@@ -60,26 +61,30 @@ public class Menu : MonoBehaviour
     }
     public void PlayLevel3()
     {
-        LoadScene(_level3SceneName);
+        LoadScene(level3SceneName);
     }
     public void PlayLevelSelector()
     {
-        LoadScene(_levelSelectorSceneName);
+        LoadScene(levelSelectorSceneName);
     }
 
     public void ShowCredits()
     {
-        LoadScene(_creditsSceneName);
+        LoadScene(creditsSceneName);
     }
 
     public void GoMainMenu()
     {
-        LoadScene(_mainMenuSceneName);
+        LoadScene(mainMenuSceneName);
+    }
+    public void GoShop()
+    {
+        LoadScene(shopSceneName);
     }
 
     public void GoOptions()
     {
-        LoadScene(_optionsSceneName);
+        LoadScene(optionsSceneName);
     }
 
     public void QuitGame()

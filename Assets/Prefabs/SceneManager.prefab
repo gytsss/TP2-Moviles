@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9213264807962888537}
   - component: {fileID: 2758163156348025455}
   - component: {fileID: 4447552070604625033}
+  - component: {fileID: 8032240741469077404}
   - component: {fileID: 6758530106320547056}
   m_Layer: 0
   m_Name: SceneManager
@@ -68,6 +69,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detailsText: {fileID: 0}
   score: 0
+--- !u!114 &8032240741469077404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213264807962888538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a1989d8cf67e3409c1818d72410664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 0}
 --- !u!114 &6758530106320547056
 MonoBehaviour:
   m_ObjectHideFlags: 0

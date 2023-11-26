@@ -64,6 +64,8 @@ public class Counter : MonoBehaviour
     {
         if (points >= winPoints)
         {
+            PlayerPrefs.SetInt("Cash", cash);
+            Handheld.Vibrate();
             sceneManager.PlayLevel(currentLevel + 1);
         }
     }
@@ -88,7 +90,6 @@ public class Counter : MonoBehaviour
         cash++;
         UpdateCashText();
         
-        PlayerPrefs.SetInt("Cash", cash);
     }
     public void DecreaseCash(int cash)
     {

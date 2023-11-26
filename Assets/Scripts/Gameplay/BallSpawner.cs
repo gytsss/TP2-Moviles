@@ -14,13 +14,23 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] private Counter counter;
     [SerializeField] private TextMeshProUGUI shootsText;
     [SerializeField] private int maxShoots = 0;
+    [SerializeField] private int poolSize = 20;
 
     private int shoots = 0;
+    private GameObject[] ballPool;
+    private int currentBall = 0;
 
     private void Awake()
     {
         tutorialPanel.SetActive(true);
         losePanel.SetActive(false);
+
+        ballPool = new GameObject[poolSize];
+        for (int i = 0; i < poolSize; i++)
+        {
+            ballPool[i] = Instantiate(ballPrefab);
+            ballPool[i].SetActive(false);
+        }
     }
 
     private void Update()
@@ -45,14 +55,24 @@ public class BallSpawner : MonoBehaviour
                 shoots++;
                 UpdateText();
 
-                GameObject ball = Instantiate(ballPrefab, touchedPos, Quaternion.identity) as GameObject;
-                //ball.GetComponent<SpriteRenderer>().sprite = ShopManager.Instance.GetActiveBallSprite();
+                GameObject ball = ballPool[currentBall];
+                ball.transform.position = touchedPos;
+                ball.SetActive(true);
+                currentBall = (currentBall + 1) % poolSize;
 
-                Destroy(ball, 3f);
+                ball.GetComponent<SpriteRenderer>().sprite = ShopManager.Instance.GetActiveBallSprite();
+
+                StartCoroutine(ReturnBallToPool(ball, 3f));
             }
-
-            StartCoroutine(CheckLoseCoroutine());
         }
+
+        StartCoroutine(CheckLoseCoroutine());
+    }
+
+    private IEnumerator ReturnBallToPool(GameObject ball, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ball.SetActive(false);
     }
 
 

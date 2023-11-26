@@ -1201,6 +1201,7 @@ MonoBehaviour:
   counter: {fileID: 1537845889}
   shootsText: {fileID: 1785434519}
   maxShoots: 7
+  poolSize: 20
 --- !u!4 &1029191226
 Transform:
   m_ObjectHideFlags: 0

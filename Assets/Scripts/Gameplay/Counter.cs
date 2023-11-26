@@ -12,8 +12,6 @@ public class Counter : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI pointsText;
     [SerializeField] private Menu sceneManager;
-    [SerializeField] private int maxShoots = 0;
-    [SerializeField] private int shoots = 0;
     [SerializeField] private int winPoints = 0;
     [SerializeField] private int thisLevel = 0;
     private int points = 0;

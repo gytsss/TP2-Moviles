@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -25,6 +26,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private Button purchaseButton;
     [SerializeField] private Button selectButton;
     [SerializeField] private Button selectedButton;
+    [SerializeField] private TextMeshProUGUI priceText;
+    [SerializeField] private Counter counter;
     [SerializeField] private int currentItem = 0;
 
     private int maxItems;
@@ -39,14 +42,15 @@ public class ShopManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 
     private void Start()
     {
         maxItems = shopItems.Length;
-        LoadData();
-        
         shopItems[0].isOwned = true;
+        
+        LoadData();
 
         UpdateUI();
     }
@@ -54,7 +58,11 @@ public class ShopManager : MonoBehaviour
     private void UpdateUI()
     {
         currentItemSprite.sprite = shopItems[currentItem].sprite;
-        purchaseButton.gameObject.SetActive(!shopItems[currentItem].isOwned);
+        priceText.text = shopItems[currentItem].price.ToString();
+        
+        bool canPurchase = counter.GetCash() >= shopItems[currentItem].price;
+        
+        purchaseButton.gameObject.SetActive(!shopItems[currentItem].isOwned && canPurchase);
         selectButton.gameObject.SetActive(shopItems[currentItem].isOwned && !shopItems[currentItem].isSelected);
         selectedButton.gameObject.SetActive(shopItems[currentItem].isOwned && shopItems[currentItem].isSelected);
     }
@@ -77,8 +85,9 @@ public class ShopManager : MonoBehaviour
 
     public void PurchaseItem()
     {
-        if (!shopItems[currentItem].isOwned)
+        if (!shopItems[currentItem].isOwned && counter.GetCash() >= shopItems[currentItem].price)
         {
+            counter.DecreaseCash(shopItems[currentItem].price);
             shopItems[currentItem].isOwned = true;
             SaveData();
             UpdateUI();
@@ -129,5 +138,9 @@ public class ShopManager : MonoBehaviour
             shopItems[i].isOwned = PlayerPrefs.GetInt("IsOwned" + i, 0) == 1;
             shopItems[i].isSelected = PlayerPrefs.GetInt("IsSelected" + i, 0) == 1;
         }
+    }
+    private void ResetData()
+    {
+       PlayerPrefs.DeleteAll();
     }
 }

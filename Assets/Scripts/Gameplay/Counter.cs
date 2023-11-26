@@ -11,19 +11,27 @@ public class Counter : MonoBehaviour
     public static event Action OnNextLevel;
     
     [SerializeField] private TextMeshProUGUI pointsText;
+    [SerializeField] private TextMeshProUGUI cashText;
     [SerializeField] private Menu sceneManager;
     [SerializeField] private int winPoints = 0;
     [SerializeField] private int thisLevel = 0;
     private int points = 0;
     private int currentLevel = 0;
     private float positionY;
+    private int cash = 0;
 
     private void Awake()
     {
         GoalChecker.OnGoal += IncreasePoints;
+        GoalChecker.OnGoal += IncreaseCash;
         currentLevel = thisLevel;
-        UpdateText();
+        
+        cash = PlayerPrefs.GetInt("Cash", 0);
+        
+        UpdateCashText();
+        UpdatePointsText();
     }
+
 
     private void Update()
     {
@@ -40,12 +48,16 @@ public class Counter : MonoBehaviour
     public void IncreasePoints()
     {
         points++;
-        UpdateText();
+        UpdatePointsText();
     }
 
-    private void UpdateText()
+    private void UpdatePointsText()
     {
         pointsText.text = points.ToString() + "/" + winPoints.ToString();
+    }
+    private void UpdateCashText()
+    {
+        cashText.text = cash.ToString();
     }
 
     private void CheckWin()
@@ -59,10 +71,30 @@ public class Counter : MonoBehaviour
     private void OnDestroy()
     {
         GoalChecker.OnGoal -= IncreasePoints;
+        GoalChecker.OnGoal -= IncreaseCash;
     }
 
     public void SetCurrentLevel(int level)
     {
         currentLevel = level;
+    }
+
+    public int GetCash()
+    {
+        return cash;
+    }
+    private void IncreaseCash()
+    {
+        cash++;
+        UpdateCashText();
+        
+        PlayerPrefs.SetInt("Cash", cash);
+    }
+    public void DecreaseCash(int cash)
+    {
+        this.cash -= cash;
+        UpdateCashText();
+        
+        PlayerPrefs.SetInt("Cash", cash);
     }
 }

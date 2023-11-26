@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.XR;
+
 
 public class BallSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject ballPrefab;
+    [SerializeField] private TextMeshProUGUI shootsText;
+    [SerializeField] private int maxShoots = 0;
 
-    public int maxShoots = 0;
-    public int shoots = 0;
+    private int shoots = 0;
 
     private void Update()
     {
@@ -23,11 +25,18 @@ public class BallSpawner : MonoBehaviour
             if (touchedPos.y > boundary)
             {
                 shoots++;
+                UpdateText();
+                
                 GameObject ball = Instantiate(ballPrefab, touchedPos, Quaternion.identity) as GameObject;
                 ball.GetComponent<SpriteRenderer>().sprite = ShopManager.Instance.GetActiveBallSprite();
 
                 Destroy(ball, 3f);
             }
         }
+    }
+
+    private void UpdateText()
+    {
+        shootsText.text = (maxShoots - shoots).ToString();
     }
 }

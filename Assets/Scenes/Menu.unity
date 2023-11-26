@@ -290,6 +290,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 9213264806497574353}
+        m_TargetAssemblyTypeName: VibrationManager, Assembly-CSharp
+        m_MethodName: HeavyVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 9213264806497574352}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: LoadScene
@@ -557,6 +569,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 9213264806497574353}
+        m_TargetAssemblyTypeName: VibrationManager, Assembly-CSharp
+        m_MethodName: HeavyVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 9213264806497574352}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: PlayLevelSelector
@@ -690,6 +714,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 9213264806497574353}
+        m_TargetAssemblyTypeName: VibrationManager, Assembly-CSharp
+        m_MethodName: HeavyVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 9213264806497574352}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: QuitGame
@@ -1049,6 +1085,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 9213264806497574353}
+        m_TargetAssemblyTypeName: VibrationManager, Assembly-CSharp
+        m_MethodName: HeavyVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 9213264806497574352}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: GoShop
@@ -1618,6 +1666,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a441cff559dab954d8e0a6ae22ea1065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9213264806497574353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6758530106320547056, guid: 10499be2e1e8496449cf61e41581be27, type: 3}
+  m_PrefabInstance: {fileID: 9213264806497574351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13882c60ee18ef48ac0efc48ce7ea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

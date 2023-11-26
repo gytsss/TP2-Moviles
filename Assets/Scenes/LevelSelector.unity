@@ -206,6 +206,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 692538955}
+        m_TargetAssemblyTypeName: VibrationManager, Assembly-CSharp
+        m_MethodName: HeavyVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 692538953}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: PlayLevel3
@@ -557,6 +569,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46090961114e1d34c86664eb00cd3ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &692538955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6758530106320547056, guid: 10499be2e1e8496449cf61e41581be27, type: 3}
+  m_PrefabInstance: {fileID: 692538952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13882c60ee18ef48ac0efc48ce7ea52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &779686493
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,6 +663,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 692538955}
+        m_TargetAssemblyTypeName: VibrationManager, Assembly-CSharp
+        m_MethodName: HeavyVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 692538954}
         m_TargetAssemblyTypeName: PlayGamesAchievements, Assembly-CSharp
         m_MethodName: EnterLevel1
@@ -1319,6 +1354,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 692538955}
+        m_TargetAssemblyTypeName: VibrationManager, Assembly-CSharp
+        m_MethodName: HeavyVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 692538954}
         m_TargetAssemblyTypeName: PlayGamesAchievements, Assembly-CSharp
         m_MethodName: EnterLevel2
@@ -1540,9 +1587,53 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 692538955}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
       objectReference: {fileID: 692538953}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HeavyVibration
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GoMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VibrationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Menu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 330039426961994509, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2632090925664056465, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_Pivot.x
       value: 0

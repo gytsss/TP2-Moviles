@@ -98,4 +98,14 @@ public class Counter : MonoBehaviour
         
         PlayerPrefs.SetInt("Cash", cash);
     }
+
+    public int GetWinPoints()
+    {
+        return winPoints;
+    }
+
+    public int GetPoints()
+    {
+        return points;
+    }
 }

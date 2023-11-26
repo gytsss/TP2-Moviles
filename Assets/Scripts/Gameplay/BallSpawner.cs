@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class BallSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject ballPrefab;
     [SerializeField] private GameObject tutorialPanel;
+    [SerializeField] private GameObject losePanel;
+    [SerializeField] private Counter counter;
     [SerializeField] private TextMeshProUGUI shootsText;
     [SerializeField] private int maxShoots = 0;
 
@@ -17,6 +20,7 @@ public class BallSpawner : MonoBehaviour
     private void Awake()
     {
         tutorialPanel.SetActive(true);
+        losePanel.SetActive(false);
     }
 
     private void Update()
@@ -42,10 +46,40 @@ public class BallSpawner : MonoBehaviour
                 UpdateText();
 
                 GameObject ball = Instantiate(ballPrefab, touchedPos, Quaternion.identity) as GameObject;
-                ball.GetComponent<SpriteRenderer>().sprite = ShopManager.Instance.GetActiveBallSprite();
+                //ball.GetComponent<SpriteRenderer>().sprite = ShopManager.Instance.GetActiveBallSprite();
 
                 Destroy(ball, 3f);
             }
+
+            StartCoroutine(CheckLoseCoroutine());
+        }
+    }
+
+
+    private IEnumerator CheckLoseCoroutine()
+    {
+        int remainingPoints = counter.GetWinPoints() - counter.GetPoints();
+        int remainingShoots = maxShoots - shoots;
+
+        if (remainingShoots < remainingPoints - 1)
+        {
+            Handheld.Vibrate();
+            Debug.Log("Lose!");
+            losePanel.SetActive(true);
+
+            yield return new WaitForSeconds(3);
+
+            StartCoroutine(LoadSceneAsync("Menu"));
+        }
+    }
+
+    private IEnumerator LoadSceneAsync(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
         }
     }
 

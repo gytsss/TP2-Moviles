@@ -22,10 +22,10 @@ public class Counter : MonoBehaviour
 
     private void Awake()
     {
+        //PlayerPrefs.DeleteAll();
         currentLevel = thisLevel;
 
         cash = PlayerPrefs.GetInt("Cash", 0);
-
 
         UpdateCashText();
         UpdatePointsText();

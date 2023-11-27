@@ -409,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &402964255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1544,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7732804090718340398, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_Color.a
-      value: 0.4627451
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783103981508675006, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_Name

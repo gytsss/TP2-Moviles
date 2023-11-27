@@ -330,7 +330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 82, y: -142.99988}
+  m_AnchoredPosition: {x: 100, y: -180}
   m_SizeDelta: {x: 85.29999, y: 33.92993}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &380392690
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1268,7 +1268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1830,6 +1830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsText: {fileID: 0}
   cashText: {fileID: 331846637}
+  winPanel: {fileID: 0}
   sceneManager: {fileID: 0}
   winPoints: 0
   thisLevel: 0
@@ -2180,7 +2181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -274, y: -116}
+  m_AnchoredPosition: {x: -249, y: -26}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2055848481
@@ -2205,8 +2206,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shop
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3334a2d19ea71ed44b0d76a578d2cc6a, type: 2}
-  m_sharedMaterial: {fileID: 3247366485847256531, guid: 3334a2d19ea71ed44b0d76a578d2cc6a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a5d532f0c26862c42a7f5c824964c783, type: 2}
+  m_sharedMaterial: {fileID: 248404077805400804, guid: a5d532f0c26862c42a7f5c824964c783, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2681,7 +2682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7732804090718340398, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_Color.a
-      value: 0.5294118
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783103981508675006, guid: 56630a87dd19e0949aeaebb234b130ab, type: 3}
       propertyPath: m_Name

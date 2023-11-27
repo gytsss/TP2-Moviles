@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class BallSpawner : MonoBehaviour
 {
+    #region EXPOSED_FIELDS
+
     [SerializeField] private GameObject ballPrefab;
     [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private GameObject losePanel;
@@ -16,16 +18,24 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] private int maxShoots = 0;
     [SerializeField] private int poolSize = 20;
 
+    #endregion
+
+    #region PRIVATE_FIELDS
+
     private int shoots = 0;
     private GameObject[] ballPool;
     private int currentBall = 0;
     private BallFactory ballFactory;
 
+    #endregion
+
+    #region UNITY_CALLS
+
     private void Awake()
     {
         tutorialPanel.SetActive(true);
         losePanel.SetActive(false);
-        
+
         ballFactory = new BallFactory(ballPrefab);
         ballPool = new GameObject[poolSize];
         for (int i = 0; i < poolSize; i++)
@@ -104,8 +114,14 @@ public class BallSpawner : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region PRIVATE_METHODS
+
     private void UpdateText()
     {
         shootsText.text = (maxShoots - shoots).ToString();
     }
+
+    #endregion
 }

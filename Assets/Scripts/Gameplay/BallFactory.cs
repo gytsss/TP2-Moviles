@@ -9,8 +9,13 @@ public interface IBall
 
 public class BallFactory : MonoBehaviour
 {
+    #region PRIVATE_FIELDS
+
     private GameObject ballPrefab;
 
+    #endregion
+
+    #region PUBLIC_METHODS
     public BallFactory(GameObject ballPrefab)
     {
         this.ballPrefab = ballPrefab;
@@ -22,4 +27,5 @@ public class BallFactory : MonoBehaviour
         ball.SetActive(false);
         return ball;
     }
+    #endregion
 }

@@ -19,6 +19,8 @@ public class ShopManager : MonoBehaviour
 
     public static ShopManager Instance { get; private set; }
 
+    #region EXPOSED_FIELDS
+
     [SerializeField] private Item[] shopItems;
     [SerializeField] private Image currentItemSprite;
     [SerializeField] private GameObject ballPrefab;
@@ -30,7 +32,15 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private Counter counter;
     [SerializeField] private int currentItem = 0;
 
+    #endregion
+
+    #region PRIVATE_FIELDS
+
     private int maxItems;
+
+    #endregion
+
+    #region UNITY_CALLS
 
     private void Awake()
     {
@@ -48,23 +58,32 @@ public class ShopManager : MonoBehaviour
     {
         //PlayerPrefs.DeleteAll();
         maxItems = shopItems.Length;
-        shopItems[0].isOwned = true;
-
         LoadData();
+
+        bool isAnyItemSelected = false;
+        for (int i = 0; i < maxItems; i++)
+        {
+            if (shopItems[i].isSelected)
+            {
+                isAnyItemSelected = true;
+                currentItem = i;
+                break;
+            }
+        }
+
+        if (!isAnyItemSelected && shopItems.Length > 0)
+        {
+            shopItems[0].isSelected = true;
+            shopItems[0].isOwned = true;
+            currentItem = 0;
+        }
+
         UpdateUI();
     }
 
-    private void UpdateUI()
-    {
-        currentItemSprite.sprite = shopItems[currentItem].sprite;
-        priceText.text = shopItems[currentItem].price.ToString();
+    #endregion
 
-        bool canPurchase = counter.GetCash() >= shopItems[currentItem].price;
-
-        purchaseButton.gameObject.SetActive(!shopItems[currentItem].isOwned && canPurchase);
-        selectButton.gameObject.SetActive(shopItems[currentItem].isOwned && !shopItems[currentItem].isSelected);
-        selectedButton.gameObject.SetActive(shopItems[currentItem].isOwned && shopItems[currentItem].isSelected);
-    }
+    #region PUBLIC_METHODS
 
     public void NextItem()
     {
@@ -125,6 +144,23 @@ public class ShopManager : MonoBehaviour
         return null;
     }
 
+    #endregion
+
+    #region PRIVATE_METHODS
+
+    private void UpdateUI()
+    {
+        currentItemSprite.sprite = shopItems[currentItem].sprite;
+        priceText.text = shopItems[currentItem].price.ToString();
+
+        bool canPurchase = counter.GetCash() >= shopItems[currentItem].price;
+
+        purchaseButton.gameObject.SetActive(!shopItems[currentItem].isOwned && canPurchase);
+        selectButton.gameObject.SetActive(shopItems[currentItem].isOwned && !shopItems[currentItem].isSelected);
+        selectedButton.gameObject.SetActive(shopItems[currentItem].isOwned && shopItems[currentItem].isSelected);
+    }
+
+
     private void SaveData()
     {
         for (int i = 0; i < shopItems.Length; i++)
@@ -144,16 +180,15 @@ public class ShopManager : MonoBehaviour
             shopItems[i].isOwned = PlayerPrefs.GetInt("IsOwned" + i, 0) == 1;
             shopItems[i].isSelected = PlayerPrefs.GetInt("IsSelected" + i, 0) == 1;
         }
-        
+
         currentItem = PlayerPrefs.GetInt("CurrentItem", 0);
-        if (shopItems.Length > 0 && currentItem < shopItems.Length)
-        {
-            shopItems[currentItem].isSelected = true;
-        }
     }
+
 
     private void ResetData()
     {
         PlayerPrefs.DeleteAll();
     }
+
+    #endregion
 }

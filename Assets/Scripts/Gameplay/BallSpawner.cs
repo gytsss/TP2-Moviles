@@ -19,17 +19,18 @@ public class BallSpawner : MonoBehaviour
     private int shoots = 0;
     private GameObject[] ballPool;
     private int currentBall = 0;
+    private BallFactory ballFactory;
 
     private void Awake()
     {
         tutorialPanel.SetActive(true);
         losePanel.SetActive(false);
-
+        
+        ballFactory = new BallFactory(ballPrefab);
         ballPool = new GameObject[poolSize];
         for (int i = 0; i < poolSize; i++)
         {
-            ballPool[i] = Instantiate(ballPrefab);
-            ballPool[i].SetActive(false);
+            ballPool[i] = ballFactory.CreateBall();
         }
     }
 

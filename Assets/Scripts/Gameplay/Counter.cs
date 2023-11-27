@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
-    public static event Action OnNextLevel;
-    
     [SerializeField] private TextMeshProUGUI pointsText;
     [SerializeField] private TextMeshProUGUI cashText;
+    [SerializeField] private GameObject winPanel;
     [SerializeField] private Menu sceneManager;
     [SerializeField] private int winPoints = 0;
     [SerializeField] private int thisLevel = 0;
@@ -22,12 +22,11 @@ public class Counter : MonoBehaviour
 
     private void Awake()
     {
-        GoalChecker.OnGoal += IncreasePoints;
-        GoalChecker.OnGoal += IncreaseCash;
         currentLevel = thisLevel;
-        
+
         cash = PlayerPrefs.GetInt("Cash", 0);
-        
+
+
         UpdateCashText();
         UpdatePointsText();
     }
@@ -36,12 +35,12 @@ public class Counter : MonoBehaviour
     private void Update()
     {
         Vector3 position = pointsText.transform.position;
-        
+
         positionY = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height * 0.64f, 0)).y;
-        
+
         position.y = positionY;
         pointsText.transform.position = position;
-        
+
         CheckWin();
     }
 
@@ -55,6 +54,7 @@ public class Counter : MonoBehaviour
     {
         pointsText.text = points.ToString() + "/" + winPoints.ToString();
     }
+
     private void UpdateCashText()
     {
         cashText.text = cash.ToString();
@@ -66,16 +66,31 @@ public class Counter : MonoBehaviour
         {
             PlayerPrefs.SetInt("Cash", cash);
             Handheld.Vibrate();
-            sceneManager.PlayLevel(currentLevel + 1);
+            
+            if (currentLevel < 3)
+            {
+                StartCoroutine(LoadSceneAsync("Level" + (currentLevel + 1)));
+            }
+            else
+            {
+                winPanel.SetActive(true);
+                StartCoroutine(LoadSceneAsync("Menu"));
+            }
         }
     }
 
-    private void OnDestroy()
+    private IEnumerator LoadSceneAsync(string sceneName)
     {
-        GoalChecker.OnGoal -= IncreasePoints;
-        GoalChecker.OnGoal -= IncreaseCash;
-    }
+        yield return new WaitForSeconds(4f);
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+    
     public void SetCurrentLevel(int level)
     {
         currentLevel = level;
@@ -85,17 +100,18 @@ public class Counter : MonoBehaviour
     {
         return cash;
     }
-    private void IncreaseCash()
+
+    public void IncreaseCash()
     {
         cash++;
         UpdateCashText();
-        
     }
+
     public void DecreaseCash(int cash)
     {
         this.cash -= cash;
         UpdateCashText();
-        
+
         PlayerPrefs.SetInt("Cash", cash);
     }
 

@@ -1543,6 +1543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsText: {fileID: 394295163}
   cashText: {fileID: 186601626}
+  winPanel: {fileID: 0}
   sceneManager: {fileID: 938843657}
   winPoints: 5
   thisLevel: 1
@@ -1995,7 +1996,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: No more shoots! Backing to the menu
+  m_text: No more shoots! Returning to the menu...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3334a2d19ea71ed44b0d76a578d2cc6a, type: 2}
   m_sharedMaterial: {fileID: 3247366485847256531, guid: 3334a2d19ea71ed44b0d76a578d2cc6a, type: 2}
@@ -2080,6 +2081,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2785046360786940754, guid: 359fe13b66278fa4ab82ff14c51fab49, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2834158776350684164, guid: 359fe13b66278fa4ab82ff14c51fab49, type: 3}
       propertyPath: m_Name
       value: Hoop
@@ -2132,11 +2137,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5107830780728091808, guid: 359fe13b66278fa4ab82ff14c51fab49, type: 3}
+      propertyPath: counter
+      value: 
+      objectReference: {fileID: 1537845889}
+    - target: {fileID: 5107830780728091808, guid: 359fe13b66278fa4ab82ff14c51fab49, type: 3}
+      propertyPath: goalChecker
+      value: 
+      objectReference: {fileID: 2834158776621745797}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 359fe13b66278fa4ab82ff14c51fab49, type: 3}
+--- !u!114 &2834158776621745797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2834158776621745798, guid: 359fe13b66278fa4ab82ff14c51fab49, type: 3}
+  m_PrefabInstance: {fileID: 2834158776621745796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb1c785acb55924992eb700bc55bf1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

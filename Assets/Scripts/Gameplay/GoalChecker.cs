@@ -8,8 +8,14 @@ using CandyCoded.HapticFeedback;
 
 public class GoalChecker : MonoBehaviour
 {
-    public static event Action OnGoal;
 
+    private IMediator mediator;
+    
+    public void SetMediator(IMediator mediator)
+    {
+        this.mediator = mediator;
+    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Ball")
@@ -18,7 +24,7 @@ public class GoalChecker : MonoBehaviour
             HapticFeedback.HeavyFeedback();
             Debug.Log("Vibration!");
             Debug.Log("Goal!");
-            OnGoal?.Invoke();
+            mediator.GoalScored();
         }
     }
 }

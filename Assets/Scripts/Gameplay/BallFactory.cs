@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface IBall
+{
+    GameObject CreateBall();
+}
+
 public class BallFactory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameObject ballPrefab;
+
+    public BallFactory(GameObject ballPrefab)
     {
-        
+        this.ballPrefab = ballPrefab;
     }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject CreateBall()
     {
-        
+        GameObject ball = GameObject.Instantiate(ballPrefab);
+        ball.SetActive(false);
+        return ball;
     }
 }

@@ -1684,7 +1684,7 @@ MonoBehaviour:
   cashText: {fileID: 1067003814}
   winPanel: {fileID: 1458908052}
   sceneManager: {fileID: 938843657}
-  winPoints: 1
+  winPoints: 7
   thisLevel: 3
 --- !u!4 &1537845890
 Transform:

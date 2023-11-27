@@ -42,16 +42,15 @@ public class ShopManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 
     private void Start()
     {
+        //PlayerPrefs.DeleteAll();
         maxItems = shopItems.Length;
         shopItems[0].isOwned = true;
-        
-        LoadData();
 
+        LoadData();
         UpdateUI();
     }
 
@@ -59,9 +58,9 @@ public class ShopManager : MonoBehaviour
     {
         currentItemSprite.sprite = shopItems[currentItem].sprite;
         priceText.text = shopItems[currentItem].price.ToString();
-        
+
         bool canPurchase = counter.GetCash() >= shopItems[currentItem].price;
-        
+
         purchaseButton.gameObject.SetActive(!shopItems[currentItem].isOwned && canPurchase);
         selectButton.gameObject.SetActive(shopItems[currentItem].isOwned && !shopItems[currentItem].isSelected);
         selectedButton.gameObject.SetActive(shopItems[currentItem].isOwned && shopItems[currentItem].isSelected);
@@ -89,6 +88,10 @@ public class ShopManager : MonoBehaviour
         {
             counter.DecreaseCash(shopItems[currentItem].price);
             shopItems[currentItem].isOwned = true;
+
+            if (currentItem == maxItems - 1)
+                PlayGamesAchievements.instance.PurchaseFootball();
+
             SaveData();
             UpdateUI();
         }
@@ -118,9 +121,10 @@ public class ShopManager : MonoBehaviour
                 return item.sprite;
             }
         }
+
         return null;
     }
-    
+
     private void SaveData()
     {
         for (int i = 0; i < shopItems.Length; i++)
@@ -128,6 +132,8 @@ public class ShopManager : MonoBehaviour
             PlayerPrefs.SetInt("IsOwned" + i, shopItems[i].isOwned ? 1 : 0);
             PlayerPrefs.SetInt("IsSelected" + i, shopItems[i].isSelected ? 1 : 0);
         }
+
+        PlayerPrefs.SetInt("CurrentItem", currentItem);
         PlayerPrefs.Save();
     }
 
@@ -138,9 +144,16 @@ public class ShopManager : MonoBehaviour
             shopItems[i].isOwned = PlayerPrefs.GetInt("IsOwned" + i, 0) == 1;
             shopItems[i].isSelected = PlayerPrefs.GetInt("IsSelected" + i, 0) == 1;
         }
+        
+        currentItem = PlayerPrefs.GetInt("CurrentItem", 0);
+        if (shopItems.Length > 0 && currentItem < shopItems.Length)
+        {
+            shopItems[currentItem].isSelected = true;
+        }
     }
+
     private void ResetData()
     {
-       PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 }

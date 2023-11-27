@@ -101,7 +101,6 @@ public class PlayGamesAchievements : MonoBehaviour
         if (PlayGamesPlatform.Instance.localUser.authenticated)
         {
             PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
-            //Social.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
             PlayGamesPlatform.Instance.UnlockAchievement(GPGSIds.achievement_enter_level_2, success => { });
         }
     }
@@ -110,7 +109,20 @@ public class PlayGamesAchievements : MonoBehaviour
         if (PlayGamesPlatform.Instance.localUser.authenticated)
         {
             PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_enter_level_2, 100f, success => { });
-            //Social.ReportProgress(GPGSIds.achievement_level_1, 100f, success => { });
+        }
+    }
+    public void WinLevel3()
+    {
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
+        {
+            PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_all_net, 100f, success => { });
+        }
+    }
+    public void PurchaseFootball()
+    {
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
+        {
+            PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_football_player, 100f, success => { });
         }
     }
 }

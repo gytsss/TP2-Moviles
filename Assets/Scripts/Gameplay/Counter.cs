@@ -67,6 +67,8 @@ public class Counter : MonoBehaviour
             PlayerPrefs.SetInt("Cash", cash);
             Handheld.Vibrate();
             
+            PlayGamesAchievements.instance.WinLevel3();
+            
             if (currentLevel < 3)
             {
                 StartCoroutine(LoadSceneAsync("Level" + (currentLevel + 1)));
